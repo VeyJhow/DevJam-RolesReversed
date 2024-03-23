@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqlc6ml2dv1ox"]
+
+[ext_resource type="Script" path="res://test_03.gd" id="1_4w2eq"]
+[ext_resource type="Texture2D" uid="uid://4vybgic04hg4" path="res://sprites/test peep hole hole.png" id="1_y6w3o"]
+[ext_resource type="Texture2D" uid="uid://rkyho3qf3vwc" path="res://sprites/test face.png" id="2_0mn2y"]
+[ext_resource type="FontFile" uid="uid://b36kko3m2skoy" path="res://sprites/Pixellettersfull-BnJ5.ttf" id="3_ox7cq"]
+[ext_resource type="PackedScene" uid="uid://db6i6v2yhe5y1" path="res://test_04.tscn" id="5_sch8c"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4w2eq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(576, 324)
+texture = ExtResource("1_y6w3o")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_0mn2y")
+
+[node name="Button" type="Button" parent="."]
+z_index = 1
+offset_left = 1000.0
+offset_top = 550.0
+offset_right = 1107.0
+offset_bottom = 607.0
+theme_override_fonts/font = ExtResource("3_ox7cq")
+theme_override_font_sizes/font_size = 56
+text = "abrir"
+
+[node name="Button2" type="Button" parent="."]
+z_index = 1
+offset_left = 953.0
+offset_top = 480.0
+offset_right = 1145.0
+offset_bottom = 537.0
+theme_override_fonts/font = ExtResource("3_ox7cq")
+theme_override_font_sizes/font_size = 56
+text = "nao abrir"
+
+[node name="window" parent="." instance=ExtResource("5_sch8c")]
+z_index = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
