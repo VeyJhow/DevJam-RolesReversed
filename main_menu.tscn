@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://chtd6kwvrg1bq"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_64u2j"]
+[ext_resource type="Texture2D" uid="uid://rkyho3qf3vwc" path="res://sprites/test face.png" id="2_67cvg"]
+
+[sub_resource type="SystemFont" id="SystemFont_vlcng"]
+font_names = PackedStringArray("Trebuchet MS")
+
+[sub_resource type="SystemFont" id="SystemFont_g32i8"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="SystemFont" id="SystemFont_478bo"]
+font_names = PackedStringArray("Constantia")
+
+[sub_resource type="SystemFont" id="SystemFont_plowj"]
+font_names = PackedStringArray("Constantia")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_64u2j")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_67cvg")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Espaçador" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_vlcng")
+theme_override_font_sizes/font_size = 64
+text = "Eh oh jogoh doh buracoh"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Espaçador2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Jogar" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_g32i8")
+theme_override_font_sizes/font_size = 32
+text = "Jogar"
+
+[node name="Opcoes" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_478bo")
+theme_override_font_sizes/font_size = 32
+text = "Opções"
+
+[node name="Sair" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_plowj")
+theme_override_font_sizes/font_size = 32
+text = "Sair"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Opcoes" to="." method="_on_opções_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
