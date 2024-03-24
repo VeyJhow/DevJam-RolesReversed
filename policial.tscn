@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq4tsrjgmd2q"]
+
+[ext_resource type="Texture2D" uid="uid://bu2368s6gwmh6" path="res://sprites/POLICA.png" id="1_1c5i5"]
+[ext_resource type="Script" path="res://policial.gd" id="1_kxwhe"]
+[ext_resource type="PackedScene" uid="uid://xr7p2usq6ri4" path="res://dialogue.tscn" id="2_8aigs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_turwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1c5i5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="policial" type="Node2D"]
+script = ExtResource("1_kxwhe")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 271)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_turwr")
+
+[node name="dialogue" parent="." instance=ExtResource("2_8aigs")]
+offset_bottom = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
