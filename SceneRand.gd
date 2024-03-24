@@ -5,8 +5,9 @@ var packed_scene = [
 ]
 
 func _scene_randomizer():
-	randomize()
-	#randomiza uma cena do vetor de cenas
-	var x = randi_range(0, packed_scene.size())
-	var scene = packed_scene[x].instance()
-	get_tree().change_scene_to_file(x)
+	var selected_scene = packed_scene.pick_random()
+	if selected_scene == null:
+		pass 
+	get_tree().change_scene_to_file(selected_scene)
+	packed_scene.remove(selected_scene)
+	
