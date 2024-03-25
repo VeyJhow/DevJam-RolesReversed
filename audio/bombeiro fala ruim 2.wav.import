@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dbae8ssj4i7gl"
+path="res://.godot/imported/bombeiro fala ruim 2.wav-cba88e6050d9afb59293882eaa3fc54e.sample"
+
+[deps]
+
+source_file="res://audio/bombeiro fala ruim 2.wav"
+dest_files=["res://.godot/imported/bombeiro fala ruim 2.wav-cba88e6050d9afb59293882eaa3fc54e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

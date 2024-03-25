@@ -14,6 +14,7 @@ config/name="Dev Jam Roles Reversed"
 run/main_scene="res://policial.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+config/windows_native_icon="res://sprites/PortaAgain2.ico"
 
 [rendering]
 
