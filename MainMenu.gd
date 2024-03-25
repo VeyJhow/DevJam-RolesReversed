@@ -1,13 +1,12 @@
 class_name MainMenu
 extends Control
 
-
-@onready var jogar = $MarginContainer/HBoxContainer/VBoxContainer/Jogar as Button
-@onready var opcoes = $MarginContainer/HBoxContainer/VBoxContainer/Opcoes as Button
-@onready var sair = $MarginContainer/HBoxContainer/VBoxContainer/Sair as Button
+@onready var jogar = $MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/Jogar as Button
+@onready var opcoes = $MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/Opcoes as Button
+@onready var sair = $MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/Sair as Button
 @onready var start_level
 
-
+var options_scene = preload("res://options_menu.tscn")
 
 
 func _ready():
@@ -16,11 +15,11 @@ func _ready():
 	opcoes.button_down.connect(_on_opções_pressed)
 
 func on_jogar_pressed() -> void:
-	pass #Fazer o randomizador de cena 
-	# get_tree().change_scene_to_file(cena do jogo)
+	get_tree().change_scene_to_file("res://main_scene.tscn")
 
 func _on_opções_pressed():
-	get_tree().change_scene_to_file("res://options_menu.tscn")
+	var options = options_scene.instantiate()
+	add_child(options)
 
 
 func _on_sair_pressed():

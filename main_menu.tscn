@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://chtd6kwvrg1bq"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_64u2j"]
-[ext_resource type="Texture2D" uid="uid://rkyho3qf3vwc" path="res://sprites/test face.png" id="2_67cvg"]
+[ext_resource type="Texture2D" uid="uid://c1gci30qx8x1y" path="res://sprites/TelaInicioPortaFadeRadial.png" id="2_jmh02"]
 
 [sub_resource type="SystemFont" id="SystemFont_vlcng"]
 font_names = PackedStringArray("Trebuchet MS")
@@ -31,7 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_67cvg")
+texture = ExtResource("2_jmh02")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -47,10 +47,8 @@ theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 60
-
-[node name="Espaçador" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
 
 [node name="Titulo" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -60,39 +58,65 @@ text = "Eh oh jogoh doh buracoh"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="Espaçador" type="Control" parent="MarginContainer/VBoxContainer/Titulo"]
 layout_mode = 2
+anchors_preset = 0
+offset_top = -60.0
+offset_right = 1128.0
+offset_bottom = -60.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 250
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 0
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="Espaçador13" type="Control" parent="MarginContainer/MarginContainer2/HBoxContainer"]
 layout_mode = 2
+
+[node name="Espaçador14" type="Control" parent="MarginContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="Espaçador15" type="Control" parent="MarginContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 18
 alignment = 1
 
-[node name="Espaçador2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Jogar" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Jogar" type="Button" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_g32i8")
 theme_override_font_sizes/font_size = 32
 text = "Jogar"
 
-[node name="Opcoes" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Espaçador3" type="Control" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Opcoes" type="Button" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_478bo")
 theme_override_font_sizes/font_size = 32
 text = "Opções"
 
-[node name="Sair" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Espaçador4" type="Control" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sair" type="Button" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_plowj")
 theme_override_font_sizes/font_size = 32
 text = "Sair"
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Opcoes" to="." method="_on_opções_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/Opcoes" to="." method="_on_opções_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]

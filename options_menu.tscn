@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cqih1mps5lcyc"]
 
 [ext_resource type="Script" path="res://options_menu.gd" id="1_c6q5l"]
-[ext_resource type="Texture2D" uid="uid://rkyho3qf3vwc" path="res://sprites/test face.png" id="2_1jfk4"]
 [ext_resource type="Script" path="res://volume_slider.gd" id="2_3mg0u"]
+[ext_resource type="Texture2D" uid="uid://c1gci30qx8x1y" path="res://sprites/TelaInicioPortaFadeRadial.png" id="2_aik73"]
 
 [sub_resource type="SystemFont" id="SystemFont_m0tuw"]
 font_names = PackedStringArray("Trebuchet MS")
@@ -29,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_1jfk4")
+texture = ExtResource("2_aik73")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -47,9 +47,6 @@ theme_override_constants/margin_bottom = 12
 layout_mode = 2
 theme_override_constants/separation = 60
 
-[node name="Espaçador" type="Control" parent="MarginContainer2/VBoxContainer"]
-layout_mode = 2
-
 [node name="Opcoes_titulo" type="Label" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_m0tuw")
@@ -57,6 +54,9 @@ theme_override_font_sizes/font_size = 64
 text = "Opções"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Espaçador" type="Control" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
 layout_mode = 2
@@ -82,7 +82,7 @@ custom_minimum_size = Vector2(150, 32)
 layout_mode = 2
 max_value = 1.0
 step = 0.001
-value = 1.0
+value = 0.5
 script = ExtResource("2_3mg0u")
 
 [node name="Retornar" type="Button" parent="MarginContainer2/HBoxContainer/VBoxContainer"]
@@ -93,4 +93,3 @@ theme_override_font_sizes/font_size = 32
 text = "Retornar"
 
 [connection signal="pressed" from="MarginContainer2/HBoxContainer/VBoxContainer/Retornar" to="." method="_on_retornar_pressed"]
-[connection signal="pressed" from="MarginContainer2/HBoxContainer/VBoxContainer/Retornar" to="." method="_on_sair_pressed"]
