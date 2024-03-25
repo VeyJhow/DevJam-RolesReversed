@@ -12,7 +12,7 @@ var audio_index : int
 
 func _ready():
 	var random_numer = scene_factor.pick_random()
-	if random_numer == 1:
+	if random_numer < 3:
 		good_path()
 	else:
 		bad_path()
@@ -21,7 +21,7 @@ func _ready():
 func good_path():
 	audio_index = 0
 	button1_scene = "good"
-	button2_scene = "bad"
+	button2_scene = "res://game_over.tscn"
 	dialogue.ntext1 = "Eu sou o oficial de policia local e recebi um chamado de emergencia de um vizinho"
 	dialogue.ntext2 = "Eu devo garantir a seguranca de todos no local, deixe me entrar"
 	dialogue.ntext3 = "Recebemos denuncias no local, preciso garantir a sua seguranca"
@@ -32,7 +32,7 @@ func good_path():
 
 func bad_path():
 	audio_index = 1
-	button1_scene = "bad"
+	button1_scene = "res://game_over.tscn"
 	button2_scene = "good"
 	var frame = ["frame1","frame2"]
 	animated.play(frame.pick_random())
@@ -57,9 +57,9 @@ func _on_button_2_pressed():
 func _on_animation_player_animation_finished(anim_name):
 	match anim_name:
 		"button1_pressed":
-			print(button1_scene)
+			get_tree().change_scene_to_file(button1_scene)
 		"button2_pressed":
-			print(button2_scene)
+			get_tree().change_scene_to_file(button2_scene)
 
 func _on_dialogue_play_audio():
 	audioplay[audio_index].play()
