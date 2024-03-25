@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c0hk4luku37u4"
+path="res://.godot/imported/bombeiro fala 4.wav-0c4b12cf7084b31e43c49ab5d3933721.sample"
+
+[deps]
+
+source_file="res://audio/bombeiro fala 4.wav"
+dest_files=["res://.godot/imported/bombeiro fala 4.wav-0c4b12cf7084b31e43c49ab5d3933721.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
