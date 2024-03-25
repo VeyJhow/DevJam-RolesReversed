@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://w63utdtoh7ig"]
+
+[ext_resource type="Texture2D" uid="uid://dtfhr4lfy4y7o" path="res://sprites/TelaEndingMetamorfo2.png" id="1_e85jv"]
+[ext_resource type="Script" path="res://game_over.gd" id="1_q3dg1"]
+[ext_resource type="AudioStream" uid="uid://b5tssgnffj7lv" path="res://audio/712416__zombyklr__jumpscare-1.mp3" id="2_u3tf4"]
+[ext_resource type="FontFile" uid="uid://b36kko3m2skoy" path="res://sprites/Pixellettersfull-BnJ5.ttf" id="4_5u3ao"]
+
+[sub_resource type="Animation" id="Animation_t1e68"]
+resource_name = "game_over"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 1.8, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.8, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_a3m3e"]
+resource_name = "button_pressed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_st41y"]
+_data = {
+"button_pressed": SubResource("Animation_a3m3e"),
+"game_over": SubResource("Animation_t1e68")
+}
+
+[node name="game_over" type="Node2D"]
+script = ExtResource("1_q3dg1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.28, 1.28)
+texture = ExtResource("1_e85jv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_st41y")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_u3tf4")
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 815.0
+offset_top = 574.0
+offset_right = 1137.0
+offset_bottom = 631.0
+theme_override_fonts/font = ExtResource("4_5u3ao")
+theme_override_font_sizes/font_size = 56
+text = "jogar novamente"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

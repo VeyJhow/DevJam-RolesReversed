@@ -1,0 +1,165 @@
+[gd_scene load_steps=21 format=3 uid="uid://bttrqr4bsxp5e"]
+
+[ext_resource type="Script" path="res://mae.gd" id="1_3pc2e"]
+[ext_resource type="Texture2D" uid="uid://c51xol103mgb" path="res://sprites/MUIEenportada.png" id="1_uxdlr"]
+[ext_resource type="PackedScene" uid="uid://xr7p2usq6ri4" path="res://dialogue.tscn" id="2_1dqhh"]
+[ext_resource type="FontFile" uid="uid://b36kko3m2skoy" path="res://sprites/Pixellettersfull-BnJ5.ttf" id="3_tgaaa"]
+[ext_resource type="Texture2D" uid="uid://ud811asrv604" path="res://sprites/ModeloPortaOlhoMagico.png" id="4_pffnq"]
+[ext_resource type="AudioStream" uid="uid://dw6u0ypyl7evt" path="res://audio/mae fala 1.wav" id="5_owl2n"]
+[ext_resource type="AudioStream" uid="uid://b7soa8ygoi507" path="res://audio/mae fala 2.wav" id="6_oodlb"]
+[ext_resource type="AudioStream" uid="uid://bqs8frem8bcmw" path="res://audio/mae fala 3.wav" id="7_g1xsr"]
+[ext_resource type="AudioStream" uid="uid://jy71frfxirf8" path="res://audio/mae fala 4.wav" id="8_ttlau"]
+[ext_resource type="AudioStream" uid="uid://b05s2q44647ni" path="res://audio/mae fala 5.wav" id="9_vi1rk"]
+[ext_resource type="AudioStream" uid="uid://dmloh830bfrpf" path="res://audio/mae fala ruim 1.wav" id="10_3buom"]
+[ext_resource type="AudioStream" uid="uid://3qqc62dlp32b" path="res://audio/mae fala ruim 2.wav" id="11_s5sdi"]
+[ext_resource type="AudioStream" uid="uid://bslqbc4xxucwc" path="res://audio/mae fala ruim 3.wav" id="12_fro4o"]
+[ext_resource type="Texture2D" uid="uid://ub2e28548fp" path="res://sprites/SanguePortal.png" id="14_ko2dk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0a70"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uxdlr")
+}],
+"loop": true,
+"name": &"frame1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uxdlr")
+}],
+"loop": true,
+"name": &"frame2",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_x0ig2"]
+resource_name = "button1_pressed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_s75s0"]
+resource_name = "button2_pressed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mqknd"]
+_data = {
+"button1_pressed": SubResource("Animation_x0ig2"),
+"button2_pressed": SubResource("Animation_s75s0")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gqvms"]
+playback_mode = 2
+streams_count = 5
+stream_0/stream = ExtResource("5_owl2n")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("6_oodlb")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("7_g1xsr")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("8_ttlau")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("9_vi1rk")
+stream_4/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rraa7"]
+playback_mode = 2
+streams_count = 5
+stream_0/stream = ExtResource("5_owl2n")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("10_3buom")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("11_s5sdi")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("8_ttlau")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("12_fro4o")
+stream_4/weight = 1.0
+
+[node name="mae" type="Node2D"]
+script = ExtResource("1_3pc2e")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 271)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_i0a70")
+animation = &"frame2"
+
+[node name="dialogue" parent="." instance=ExtResource("2_1dqhh")]
+z_index = 1
+offset_bottom = 0.0
+
+[node name="Button" type="Button" parent="."]
+z_index = 1
+offset_left = 15.0
+offset_top = 250.0
+offset_right = 207.0
+offset_bottom = 307.0
+theme_override_fonts/font = ExtResource("3_tgaaa")
+theme_override_font_sizes/font_size = 56
+text = "abrir"
+
+[node name="Button2" type="Button" parent="."]
+z_index = 1
+offset_left = 15.0
+offset_top = 312.0
+offset_right = 207.0
+offset_bottom = 369.0
+theme_override_fonts/font = ExtResource("3_tgaaa")
+theme_override_font_sizes/font_size = 56
+text = "nao abrir"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 1
+offset_top = -648.0
+offset_right = 1152.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mqknd")
+}
+
+[node name="audio_good" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_gqvms")
+
+[node name="audio_bad" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_rraa7")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(576, 271)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_pffnq")
+
+[node name="sangue portal" type="Sprite2D" parent="."]
+position = Vector2(576, 271)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_ko2dk")
+
+[connection signal="play_audio" from="dialogue" to="." method="_on_dialogue_play_audio"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
