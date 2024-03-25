@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3qqc62dlp32b"
+path="res://.godot/imported/mae fala ruim 2.wav-547c1e852c570810f3c92ad4142be25c.sample"
+
+[deps]
+
+source_file="res://audio/mae fala ruim 2.wav"
+dest_files=["res://.godot/imported/mae fala ruim 2.wav-547c1e852c570810f3c92ad4142be25c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
