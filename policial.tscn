@@ -1,8 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://cq4tsrjgmd2q"]
+[gd_scene load_steps=23 format=3 uid="uid://dbo7fy25n84vm"]
 
 [ext_resource type="Texture2D" uid="uid://bu2368s6gwmh6" path="res://sprites/POLICA.png" id="1_1c5i5"]
 [ext_resource type="Script" path="res://policial.gd" id="1_kxwhe"]
-[ext_resource type="PackedScene" uid="uid://xr7p2usq6ri4" path="res://dialogue.tscn" id="2_8aigs"]
+[ext_resource type="PackedScene" uid="uid://dvgatosoh88d2" path="res://dialogue.tscn" id="2_8aigs"]
 [ext_resource type="FontFile" uid="uid://b36kko3m2skoy" path="res://sprites/Pixellettersfull-BnJ5.ttf" id="4_jxfiq"]
 [ext_resource type="AudioStream" uid="uid://bhm580g4pcupo" path="res://audio/policial fala 1.wav" id="5_i1mfg"]
 [ext_resource type="AudioStream" uid="uid://d15kky17bu07g" path="res://audio/policial fala 2.wav" id="6_7iu34"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://dh8nbprb6qety" path="res://audio/policial fala ruim 2.wav" id="13_1omrj"]
 [ext_resource type="AudioStream" uid="uid://cgoqp3qwjosr1" path="res://audio/policial fala ruim 3.wav" id="14_lavp6"]
 [ext_resource type="Texture2D" uid="uid://ud811asrv604" path="res://sprites/ModeloPortaOlhoMagico.png" id="15_pftpv"]
+[ext_resource type="Texture2D" uid="uid://ub2e28548fp" path="res://sprites/SanguePortal.png" id="16_778bt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_turwr"]
 animations = [{
@@ -163,6 +164,11 @@ stream = SubResource("AudioStreamRandomizer_k5up0")
 position = Vector2(576, 271)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("15_pftpv")
+
+[node name="sangue portal" type="Sprite2D" parent="."]
+position = Vector2(576, 271)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_778bt")
 
 [connection signal="play_audio" from="dialogue" to="." method="_on_dialogue_play_audio"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
