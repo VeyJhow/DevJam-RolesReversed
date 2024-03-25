@@ -1,5 +1,7 @@
 extends Node2D
 
+signal reset_2
+
 @onready var dialogue = $dialogue
 @onready var animplay = $AnimationPlayer
 @onready var colorrect = $ColorRect
@@ -9,6 +11,8 @@ var scene_factor : Array = [1,2,3,4]
 var button1_scene
 var button2_scene
 var audio_index : int
+var animation1
+var animation2
 
 func _ready():
 	var random_numer = scene_factor.pick_random()
@@ -20,8 +24,10 @@ func _ready():
 
 func good_path():
 	audio_index = 0
-	button1_scene = "good"
-	button2_scene = "res://game_over.tscn"
+	animation1 = "button2_pressed"
+	animation2 = "button1_pressed"
+	button1_scene = preload("res://game_over.tscn")
+	button2_scene = "good"
 	dialogue.ntext1 = "Eu sou o oficial de policia local e recebi um chamado de emergencia de um vizinho"
 	dialogue.ntext2 = "Eu devo garantir a seguranca de todos no local, deixe me entrar"
 	dialogue.ntext3 = "Recebemos denuncias no local, preciso garantir a sua seguranca"
@@ -32,7 +38,9 @@ func good_path():
 
 func bad_path():
 	audio_index = 1
-	button1_scene = "res://game_over.tscn"
+	animation1 = "button1_pressed"
+	animation2 = "button2_pressed"
+	button1_scene = preload("res://game_over.tscn")
 	button2_scene = "good"
 	var frame = ["frame1","frame2"]
 	animated.play(frame.pick_random())
@@ -47,19 +55,25 @@ func bad_path():
 func _on_button_pressed():
 	audioplay[audio_index].stop()
 	colorrect.position.y = 0
-	animplay.play("button1_pressed")
+	animplay.play(animation1)
 
 func _on_button_2_pressed():
 	audioplay[audio_index].stop()
 	colorrect.position.y = 0
-	animplay.play("button2_pressed")
+	animplay.play(animation2)
 
 func _on_animation_player_animation_finished(anim_name):
 	match anim_name:
 		"button1_pressed":
-			get_tree().change_scene_to_file(button1_scene)
+			var scene1 = button1_scene.instantiate()
+			add_child(scene1)
+			scene1.reset.connect(reset_game)
 		"button2_pressed":
-			get_tree().change_scene_to_file(button2_scene)
+			queue_free()
 
 func _on_dialogue_play_audio():
 	audioplay[audio_index].play()
+
+func reset_game():
+	reset_2.emit()
+	queue_free()

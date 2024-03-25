@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://bttrqr4bsxp5e"]
+[gd_scene load_steps=21 format=3 uid="uid://bttrqr4bsxp5e"]
 
 [ext_resource type="Script" path="res://mae.gd" id="1_3pc2e"]
 [ext_resource type="Texture2D" uid="uid://c51xol103mgb" path="res://sprites/MUIEenportada.png" id="1_uxdlr"]
-[ext_resource type="PackedScene" uid="uid://xr7p2usq6ri4" path="res://dialogue.tscn" id="2_1dqhh"]
+[ext_resource type="PackedScene" uid="uid://dvgatosoh88d2" path="res://dialogue.tscn" id="2_1dqhh"]
+[ext_resource type="Texture2D" uid="uid://rol6lb5bf4c7" path="res://sprites/MuieRuim.png" id="3_cjrry"]
 [ext_resource type="FontFile" uid="uid://b36kko3m2skoy" path="res://sprites/Pixellettersfull-BnJ5.ttf" id="3_tgaaa"]
 [ext_resource type="Texture2D" uid="uid://ud811asrv604" path="res://sprites/ModeloPortaOlhoMagico.png" id="4_pffnq"]
 [ext_resource type="AudioStream" uid="uid://dw6u0ypyl7evt" path="res://audio/mae fala 1.wav" id="5_owl2n"]
@@ -26,7 +27,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_uxdlr")
+"texture": ExtResource("3_cjrry")
 }],
 "loop": true,
 "name": &"frame2",

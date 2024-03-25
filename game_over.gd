@@ -1,5 +1,6 @@
 extends Node2D
 
+signal reset
 
 @onready var animplay = $AnimationPlayer
 @onready  var button = $Button
@@ -16,4 +17,5 @@ func _on_animation_player_animation_finished(anim_name):
 			button.show()
 		"button_pressed":
 			button.hide()
+			reset.emit()
 			queue_free()

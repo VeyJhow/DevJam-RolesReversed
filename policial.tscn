@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://dbo7fy25n84vm"]
+[gd_scene load_steps=24 format=3 uid="uid://dbo7fy25n84vm"]
 
 [ext_resource type="Texture2D" uid="uid://bu2368s6gwmh6" path="res://sprites/POLICA.png" id="1_1c5i5"]
 [ext_resource type="Script" path="res://policial.gd" id="1_kxwhe"]
 [ext_resource type="PackedScene" uid="uid://dvgatosoh88d2" path="res://dialogue.tscn" id="2_8aigs"]
+[ext_resource type="Texture2D" uid="uid://ufnc8cl1afy4" path="res://sprites/TiraRuim.png" id="3_o8owt"]
 [ext_resource type="FontFile" uid="uid://b36kko3m2skoy" path="res://sprites/Pixellettersfull-BnJ5.ttf" id="4_jxfiq"]
 [ext_resource type="AudioStream" uid="uid://bhm580g4pcupo" path="res://audio/policial fala 1.wav" id="5_i1mfg"]
 [ext_resource type="AudioStream" uid="uid://d15kky17bu07g" path="res://audio/policial fala 2.wav" id="6_7iu34"]
@@ -29,7 +30,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_1c5i5")
+"texture": ExtResource("3_o8owt")
 }],
 "loop": true,
 "name": &"frame2",

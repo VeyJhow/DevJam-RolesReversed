@@ -1,6 +1,7 @@
 extends Control
 
 signal play_audio
+signal get_downed
 
 var text_index = -1
 @onready var animated = $AnimatedSprite2D
@@ -25,6 +26,7 @@ func _process(_delta):
 	if initial_text == null:
 		label.set_self_modulate("ffffff00")
 		animplay.play("get_down")
+		get_downed.emit()
 
 func _on_button_pressed():
 	var text_array : Array = [ntext1,ntext2,ntext3,ntext4,ntext5,ntext6,ntext7,ntext8]

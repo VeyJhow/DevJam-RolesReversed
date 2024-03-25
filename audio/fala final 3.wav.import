@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dij4fj5vnrp7g"
+path="res://.godot/imported/fala final 3.wav-4472856de11d8aeac6268f68c5835245.sample"
+
+[deps]
+
+source_file="res://audio/fala final 3.wav"
+dest_files=["res://.godot/imported/fala final 3.wav-4472856de11d8aeac6268f68c5835245.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

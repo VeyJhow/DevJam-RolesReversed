@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://ct3h15pmqoopo"]
+[gd_scene load_steps=20 format=3 uid="uid://ct3h15pmqoopo"]
 
 [ext_resource type="PackedScene" uid="uid://dvgatosoh88d2" path="res://dialogue.tscn" id="1_elf3l"]
 [ext_resource type="Script" path="res://bombeiro.gd" id="1_vx8kq"]
 [ext_resource type="FontFile" uid="uid://b36kko3m2skoy" path="res://sprites/Pixellettersfull-BnJ5.ttf" id="2_4lxm7"]
 [ext_resource type="Texture2D" uid="uid://bfl8ax3dexlea" path="res://sprites/BOMBERO.png" id="2_612r8"]
 [ext_resource type="Texture2D" uid="uid://ud811asrv604" path="res://sprites/ModeloPortaOlhoMagico.png" id="3_ew6vc"]
+[ext_resource type="Texture2D" uid="uid://nnhy0eenhmy1" path="res://sprites/BomberoMal.png" id="3_icq5i"]
 [ext_resource type="AudioStream" uid="uid://eclnepddbdt" path="res://audio/bombeiro fala 1.wav" id="5_0r63n"]
 [ext_resource type="AudioStream" uid="uid://lqi4v7al8akx" path="res://audio/bombeiro fala 2.wav" id="6_q62nj"]
 [ext_resource type="AudioStream" uid="uid://dnsw8bjo2wr2" path="res://audio/bombeiro fala 3.wav" id="7_2xmyd"]
@@ -25,7 +26,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_612r8")
+"texture": ExtResource("3_icq5i")
 }],
 "loop": true,
 "name": &"frame2",
@@ -103,7 +104,7 @@ script = ExtResource("1_vx8kq")
 position = Vector2(576, 271)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_5463q")
-animation = &"frame1"
+animation = &"frame2"
 
 [node name="dialogue" parent="." instance=ExtResource("1_elf3l")]
 z_index = 1

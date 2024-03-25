@@ -15,7 +15,7 @@ func _ready():
 	opcoes.button_down.connect(_on_opções_pressed)
 
 func on_jogar_pressed() -> void:
-	get_tree().change_scene_to_file("res://main_scene.tscn")
+	get_tree().change_scene_to_file("res://initial_cutscene.tscn")
 
 func _on_opções_pressed():
 	var options = options_scene.instantiate()
