@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://w63utdtoh7ig"]
+[gd_scene load_steps=8 format=3 uid="uid://cbljcq3jpg6yu"]
 
 [ext_resource type="Texture2D" uid="uid://dtfhr4lfy4y7o" path="res://sprites/TelaEndingMetamorfo2.png" id="1_e85jv"]
 [ext_resource type="Script" path="res://game_over.gd" id="1_q3dg1"]

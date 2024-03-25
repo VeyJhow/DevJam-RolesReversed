@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://q4l7jguwxsni"]
+[gd_scene load_steps=19 format=3 uid="uid://ct3h15pmqoopo"]
 
-[ext_resource type="PackedScene" uid="uid://xr7p2usq6ri4" path="res://dialogue.tscn" id="1_elf3l"]
+[ext_resource type="PackedScene" uid="uid://dvgatosoh88d2" path="res://dialogue.tscn" id="1_elf3l"]
 [ext_resource type="Script" path="res://bombeiro.gd" id="1_vx8kq"]
 [ext_resource type="FontFile" uid="uid://b36kko3m2skoy" path="res://sprites/Pixellettersfull-BnJ5.ttf" id="2_4lxm7"]
 [ext_resource type="Texture2D" uid="uid://bfl8ax3dexlea" path="res://sprites/BOMBERO.png" id="2_612r8"]

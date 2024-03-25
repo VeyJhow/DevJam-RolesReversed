@@ -5,15 +5,19 @@
 
 [sub_resource type="SystemFont" id="SystemFont_vlcng"]
 font_names = PackedStringArray("Trebuchet MS")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_g32i8"]
 font_names = PackedStringArray("Constantia")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_478bo"]
 font_names = PackedStringArray("Constantia")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_plowj"]
 font_names = PackedStringArray("Constantia")
+subpixel_positioning = 0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
