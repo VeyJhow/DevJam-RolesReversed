@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7mmchbesoei5"
+path="res://.godot/imported/policial fala 3.wav-a87c6d8466b10bf886186b916429a495.sample"
+
+[deps]
+
+source_file="res://audio/policial fala 3.wav"
+dest_files=["res://.godot/imported/policial fala 3.wav-a87c6d8466b10bf886186b916429a495.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

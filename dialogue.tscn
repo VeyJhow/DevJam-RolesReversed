@@ -118,17 +118,16 @@ grow_vertical = 2
 script = ExtResource("1_hah43")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 840)
+position = Vector2(576, 540)
 scale = Vector2(0.5, 0.2)
 sprite_frames = SubResource("SpriteFrames_pjp8l")
 
 [node name="Label" type="Label" parent="."]
-custom_minimum_size = Vector2(576, 3)
 layout_mode = 0
 offset_left = 183.0
-offset_top = 780.0
-offset_right = 1033.0
-offset_bottom = 807.0
+offset_top = 480.0
+offset_right = 1008.0
+offset_bottom = 507.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_2mkub")
 theme_override_font_sizes/font_size = 31
@@ -137,9 +136,9 @@ autowrap_mode = 2
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 520.5
-offset_top = 902.0
+offset_top = 602.0
 offset_right = 631.5
-offset_bottom = 933.0
+offset_bottom = 633.0
 theme_override_fonts/font = ExtResource("4_2mkub")
 theme_override_font_sizes/font_size = 24
 text = "proxima fala"
@@ -150,3 +149,4 @@ libraries = {
 }
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
