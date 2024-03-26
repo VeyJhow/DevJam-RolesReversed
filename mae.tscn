@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=20 format=3 uid="uid://bttrqr4bsxp5e"]
+=======
+[gd_scene load_steps=23 format=3 uid="uid://bttrqr4bsxp5e"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://mae.gd" id="1_3pc2e"]
 [ext_resource type="Texture2D" uid="uid://c51xol103mgb" path="res://sprites/MUIEenportada.png" id="1_uxdlr"]
@@ -13,6 +17,8 @@
 [ext_resource type="AudioStream" uid="uid://dmloh830bfrpf" path="res://audio/mae fala ruim 1.wav" id="10_3buom"]
 [ext_resource type="AudioStream" uid="uid://3qqc62dlp32b" path="res://audio/mae fala ruim 2.wav" id="11_s5sdi"]
 [ext_resource type="AudioStream" uid="uid://bslqbc4xxucwc" path="res://audio/mae fala ruim 3.wav" id="12_fro4o"]
+[ext_resource type="AudioStream" uid="uid://o0ap33q2ggj3" path="res://audio/porta abrindo.wav" id="15_1hsac"]
+[ext_resource type="AudioStream" uid="uid://dj3uicwri5e48" path="res://audio/mudança de cena.wav" id="16_xyq2g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i0a70"]
 animations = [{
@@ -153,7 +159,15 @@ position = Vector2(576, 271)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_pffnq")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_1hsac")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_xyq2g")
+
+[connection signal="get_downed" from="dialogue" to="." method="_on_dialogue_get_downed"]
 [connection signal="play_audio" from="dialogue" to="." method="_on_dialogue_play_audio"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="finished" from="AudioStreamPlayer2" to="." method="_on_audio_stream_player_2_finished"]

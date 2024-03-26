@@ -1,0 +1,43 @@
+[gd_scene load_steps=10 format=3 uid="uid://3juwoejtyty6"]
+
+[ext_resource type="Script" path="res://initial_cutscene.gd" id="1_7c6ve"]
+[ext_resource type="Texture2D" uid="uid://dah372lx6mlwe" path="res://sprites/Tevelisao.png" id="1_35p55"]
+[ext_resource type="PackedScene" uid="uid://dvgatosoh88d2" path="res://dialogue.tscn" id="3_d2yrr"]
+[ext_resource type="AudioStream" uid="uid://dr87iwwkp3026" path="res://audio/falas iniciais 1.wav" id="4_7mthf"]
+[ext_resource type="AudioStream" uid="uid://mnvuaakx4hkl" path="res://audio/falas iniciais 2.wav" id="5_47h75"]
+[ext_resource type="AudioStream" uid="uid://bby5ws2ap034u" path="res://audio/falas iniciais 3.wav" id="6_xd68o"]
+[ext_resource type="AudioStream" uid="uid://cqmp18spkhadq" path="res://audio/falas iniciais 4.wav" id="7_i0tto"]
+[ext_resource type="PackedScene" uid="uid://c65h0n77gjvkh" path="res://options_button.tscn" id="8_hn5hs"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6m1pf"]
+playback_mode = 2
+streams_count = 4
+stream_0/stream = ExtResource("4_7mthf")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_47h75")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_xd68o")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("7_i0tto")
+stream_3/weight = 1.0
+
+[node name="initial_cutscene" type="Node2D"]
+script = ExtResource("1_7c6ve")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 270)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("1_35p55")
+
+[node name="dialogue" parent="." instance=ExtResource("3_d2yrr")]
+offset_bottom = 0.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_6m1pf")
+
+[node name="options_button" parent="." instance=ExtResource("8_hn5hs")]
+offset_left = 1043.0
+offset_right = 1143.0
+
+[connection signal="get_downed" from="dialogue" to="." method="_on_dialogue_get_downed"]
+[connection signal="play_audio" from="dialogue" to="." method="_on_dialogue_play_audio"]

@@ -16,6 +16,12 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 config/windows_native_icon="res://sprites/PortaAgain2.ico"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
